@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+
+  <div class="container">
+
+     <div class="header">
+        <img src="nour&dyaa/lg.png" alt="logo">
+        <h3> Enter Info for register on our page </h3>
+      </div>
+
+
+      <form onsubmit="return validateForm()">
+
+        <div class="form_login">
+        <label for="name">Name:</label>
+        <input type="text" id="name"  placeholder="your name" oninput="validateName()" />
+        <p class="errorMsg" id="errorName"></p>
+        </div>
+
+        <div class="form_login">
+        <label for="email">Email:</label>
+        <input type="email" id="email"  placeholder="your email" oninput="validateEmail()" />
+        <p class="errorMsg" id="errorEmail"></p>
+        </div>
+
+        <div class="form_login">
+        <label for="phone">Mobile:</label>
+        <input type="mobile" id="mobile"  placeholder="your mobile" oninput="validateMobile()" />
+        <p class="errorMsg" id="errorMobile"></p>
+        </div>
+
+      
+        <div class="form_login">
+        <label>Gender:</label><br>
+        <input type="radio" name="gender" id="male" value="male" onclick="validateGender()">
+        <label for="male">Male</label>
+        <input type="radio" name="gender" id="female" value="female" onclick="validateGender()">
+        <label for="female">Female</label>
+        <p class="errorMsg" id="errorGender"></p>
+        </div>
+
+
+
+      <img id="registerBtn" type="submit" src="/nour&dyaa/login2.webp" onclick="register()" width="20px">  
+
+    
+        </form>
+
+        </div>
+
+        <!-- ========================================== -->
+
+      <script src="./login.js"></script>
+
+
+    
+</body>
+</html>

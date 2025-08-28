@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>products</title>
+    <style>
+
+    .container {
+      margin: 20px auto;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      align-items: center;
+}
+
+#logo{
+  border-radius: 50px;
+  width: 80px;
+  height: 80px;
+}
+
+.header{
+      display: flex;
+      background-color: rgb(196, 211, 230);
+      color: rgb(38, 60, 105);
+      font-size: 26px;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+
+}
+        .links{
+          display: flex;
+          list-style: none;
+          border:2px solid  #e9e9ee;
+          border-radius: 6px;
+
+          .list{
+            margin-left: 25px;
+          }
+
+        }
+
+        .header{
+            display: flex;
+            margin-bottom: 30px;
+            margin-left: 10px;
+
+            .cart{
+              margin: auto;
+
+              #myCart{
+              background-color: rgb(157, 168, 184);
+              color: rgb(38, 60, 105);  
+              font-size: 30px;
+              border-radius: 10px 
+              
+            }
+          }
+        }
+
+    
+         .product {
+      border: 1px solid #e9e9ee;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .product img {
+      width: 150px;
+      border-radius: 6px;
+    }
+
+
+    .details {
+      display: block;
+
+      .actions{
+        display: block;
+
+        .view{
+           width: 30px;
+
+        }
+
+        .addCart{
+          width: 23px;
+
+        }
+      
+    }
+  }
+
+        .but{
+    margin-top: 50px;
+    #backBut{
+        margin-left: 200px;
+        margin-right: 100px;
+    }
+}
+
+.msgBox{
+      display: none;
+      margin-top: 10px;
+      border-radius: 8px;
+      padding: 10px;
+      background-color: #f0f8ff;
+      border: 1px solid #999;
+      font-weight: bold;
+      font-size: 16px;
+}
+
+    </style>
+
+    <!-- ================================================================== -->
+     
+</head>
+<body>
+
+  <div class="container">
+
+       <ul class="links">    
+          <li class="list"> <a href="/nour&dyaa.html">Home</a>
+          <img src="/nour&dyaa/home.png" width="20px"></li>
+
+          <li class="list"><a href="#" onclick="showDiscount(event)">Discounts</a>
+          <img src="/nour&dyaa/Discounts.jpg" width="30px">
+          <div class="msgBox" id="discountMsg"> 🎉 currently 50% discounts! Don't miss out!</div></li>
+          
+          <li class="list"><a href="#"  onclick="showContact(event)">CONTACT</a>
+          <img src="/nour&dyaa/love.jpg" width="20px"> 
+          <div class="msgBox" id="contactMsg">For more Info CONTACT-US <br>
+                                           📞 Hotline : 19011
+          </div></li>
+          
+          <li class="list""> 
+          <a href="#" onclick="showEmail(event)">Email</a>
+          <img src="/nour&dyaa/email.png" width="25px">
+          <div class="msgBox" id="emailMsg"> 📨 Email : nour&dyaa@gmial.com</div></li>
+          
+          <li class="list"> <a href="#" onclick="showPhone(event)">Phone</a>
+          <img src="/nour&dyaa/call.png" width="20px">
+          <div class="msgBox" id="phoneMsg"> 📱 Call : (+2)012 1101 0141</div></li>
+          </li>
+        </ul>
+
+
+    <div class="header">
+        <img src="/nour&dyaa/face1.png" alt="faceLogo" id="logo">
+        <h2>Our Products  :</h2>
+
+        <div class="cart">
+        <button id="myCart" onclick="cartBut()"> Cart <img src="/nour&dyaa/cart.webp" width="30px"> </button>   
+        </div>
+    </div>
+ 
+
+       <div id="productList">جاري التحميل...</div>
+
+
+    <div class="but">
+    <img src="/nour&dyaa/back.png" onclick="back()" id="backBut" width="50px">
+    <img src="/nour&dyaa/nextbut.png" onclick="next()" width="50px">
+    
+</div>
+
+</div>
+
+
+<!-- ========================================================= -->
+
+<script>
+
+  fetch('products.json')
+  .then(res=>res.json())
+  .then(products =>{
+    const list = document.getElementById('productList')
+
+    list.innerHTML=''
+
+    products.forEach(product => {
+      const div = document.createElement('div')
+      div.className ='product';
+
+      div.innerHTML=`
+         <img src="${product.image}" alt="${product.name}">
+         <div class="details">
+            <h3>${product.name}</h3>
+
+
+            <div class="actions">
+
+            <img class="view" src="/nour&dyaa/view.png" onclick='viewProduct(${JSON.stringify(product)})'>
+            <br>
+            <br>
+            <img class="addCart" src="/nour&dyaa/add.png" onclick='addToCart(${JSON.stringify(product)})'>
+            
+            </div>
+
+          </div>
+        `
+        ;
+
+        list.appendChild(div)
+      
+    });
+
+  });
+
+    function viewProduct(product) {
+      localStorage.setItem('selectedProduct', JSON.stringify(product));
+      window.location.href = "productDetails.html";
+    }
+
+     function addToCart(product) {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+
+   function showDiscount(event) {
+      event.preventDefault();
+      const discountMsg = document.getElementById("discountMsg");
+      discountMsg.style.display = "block";
+      setTimeout(() => {
+        discountMsg.style.display = "none";
+      }, 30000);
+    }
+
+    function showContact(event) {
+      event.preventDefault();
+      const contactMsg = document.getElementById("contactMsg");
+      contactMsg.style.display = "block";
+      setTimeout(() => {
+        contactMsg.style.display = "none";
+      }, 30000);
+    }
+
+    function showEmail(event) {
+      event.preventDefault();
+      const emailMsg = document.getElementById("emailMsg");
+      emailMsg.style.display = "block";
+      setTimeout(() => {
+        emailMsg.style.display = "none";
+      }, 30000);
+    }
+
+    function showPhone(event) {
+      event.preventDefault();
+      const phoneMsg = document.getElementById("phoneMsg");
+      phoneMsg.style.display = "block";
+      setTimeout(() => {
+        phoneMsg.style.display = "none";
+      }, 30000);
+    }
+
+
+    function cartBut(){
+      window.location.href = "cart.html";
+    }
+
+    function back() {
+      window.location.href = "nour&dyaa.html";
+    }
+
+    function next() {
+      window.location.href = "final.html";
+    }
+
+    </script>
+
+
+    
+</body>
+</html>

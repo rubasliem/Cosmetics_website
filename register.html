@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>register</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+  <img src="/nour&dyaa/regist.png">
+  <h3> Register Form Validation </h3>
+  </div>
+
+      <form onsubmit="return validateForm()">
+
+        <div class="form_login">
+        <label for="name">Name:</label>
+        <input type="text" id="name"  placeholder="your name" oninput="validateName()" />
+        <p class="errorMsg" id="errorName"></p>
+        </div>
+
+        <div class="form_login">
+        <label for="email">Email:</label>
+        <input type="email" id="email"  placeholder="your email" oninput="validateEmail()" />
+        <p class="errorMsg" id="errorEmail"></p>
+        </div>
+
+        <div class="form_login">
+        <label for="password">Password:</label>
+        <input type="password" id="password"  placeholder="your password" oninput="validatePS()" />
+        <p class="errorMsg" id="errorPs"></p>
+        </div>
+
+      
+        <div class="form_login">
+        <label for="password">Conf-PS:</label>
+        <input type="password" id="ConfirmPassword"  placeholder="confirm your password" oninput="validateConfPS()" />
+        <p class="errorMsg" id="errorConfPs"></p>
+      </div>
+
+
+      <img id="registerBtn" type="submit" src="/nour&dyaa/register.png" onclick="register()" >
+    
+        </form>
+
+        </div>
+
+
+        <!-- ========================================== -->
+
+
+    <script src="register.js"></script>
+
+    
+</body>
+</html>

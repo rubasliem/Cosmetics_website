@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      text-align: center;
+    }
+
+    .container {
+      margin: 20px auto;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .header {
+      background-color: rgb(196, 211, 230);
+      color: rgb(38, 60, 105);
+      font-size: 26px;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+
+    .item {
+      margin: 15px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+    }
+
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .total {
+      font-size: 20px;
+      margin-top: 20px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .buttons {
+      margin-top: 30px;
+    }
+
+    .buttons button {
+      margin: 10px;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .cancel-btn {
+      background-color: #c0392b;
+      color: white;
+    }
+
+    .buy-btn {
+      background-color: #27ae60;
+      color: white;
+    }
+
+    .back-btn {
+      background-color: #3498db;
+      color: white;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h2>
+        <img src="/nour&dyaa/cart.webp" width="40">
+        Your Shopping Cart
+        <img src="/nour&dyaa/cart.webp" width="40">
+      </h2>
+    </div>
+
+    <div id="cartItems">Loading your cart...</div>
+    <div class="total" id="totalPrice"></div>
+
+    <div class="buttons">
+      <button class="back-btn" onclick="back()">🔙 Back</button>
+      <button class="buy-btn" onclick="buyNow()">✅ Buy Now</button>
+      <button class="cancel-btn" onclick="cancelCart()">❌ Cancel Order</button>
+    </div>
+  </div>
+
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    const cartItems = document.getElementById('cartItems');
+    const totalPrice = document.getElementById('totalPrice');
+
+    function renderCart() {
+      cartItems.innerHTML = '';
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartItems.innerHTML = "<p>🛒 Your cart is empty.</p>";
+        totalPrice.innerHTML = '';
+        return;
+      }
+
+      cart.forEach((product, index) => {
+        const price = parseFloat(product.price);
+        total += price;
+
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'item';
+
+        itemDiv.innerHTML = `
+          <div class="item-details">
+            <h4>${product.name}</h4>
+            <p class="price">${price.toFixed(2)} EGP</p>
+          </div>
+          <button class="delete-btn" onclick="removeItem(${index})">❌ Delete</button>
+        `;
+
+        cartItems.appendChild(itemDiv);
+      });
+
+      totalPrice.innerText = `Total: ${total.toFixed(2)} EGP`;
+    }
+
+    function removeItem(index) {
+      if (confirm("Are you sure you want to delete this item?")) {
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        renderCart();
+      }
+    }
+
+    function buyNow() {
+      if (cart.length === 0) {
+        alert("Your cart is empty. Cannot proceed with purchase.");
+        return;
+      }
+
+      alert("✅ Your order was successfully placed. Thank you for shopping with us!");
+      localStorage.removeItem('cart');
+      cart = [];
+      renderCart();
+      window.location.href = "submit.html";
+    }
+
+    function cancelCart() {
+      const confirmCancel = confirm("Are you sure you want to cancel the order? All items will be removed from your cart.");
+      if (confirmCancel) {
+        localStorage.removeItem('cart');
+        cart = [];
+        renderCart();
+        alert("❌ Order canceled. Your cart is now empty.");
+        window.location.href = "final.html";
+      }
+    }
+
+    function back() {
+      window.location.href = "products.html";
+    }
+
+    renderCart();
+  </script>
+
+</body>
+</html>

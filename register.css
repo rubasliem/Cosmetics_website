@@ -1,0 +1,73 @@
+    .container {
+      margin: 20px auto;
+      max-width: 600px;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      align-items: center;
+}
+
+.header{
+      display: flex;
+      background-color: rgb(196, 211, 230);
+      color: rgb(38, 60, 105);
+      font-size: 26px;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+  
+  img{width:60px;
+      height: 60px;
+      border-radius: 30px;
+      margin: 10px;
+      }
+}
+.form_login {
+  display: flex;
+  text-align: left;
+  padding: 15px;
+  font-size: 20px;
+  color: rgb(70, 140, 214);
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  vertical-align: top;
+}
+
+.input {
+  width: 200px;
+  padding: 6px;
+  border-radius: 4px;
+}
+
+.input.error {
+  border-color: rgb(210, 183, 183);
+}
+
+select.input {
+  width: 208px;
+ }
+
+.errorMsg {
+  color: darkred;
+  margin: 4px 0 0 105px;
+  font-size: 14px;
+  display: block;
+}
+
+#registerBtn{
+  margin-left: 180px;
+  margin-top: 10px;
+  width: 80px;
+
+}
+
+input:hover{
+  background-color: rgb(196, 211, 230);
+  border: 1px solid rgb(38, 60, 105);
+
+}
+

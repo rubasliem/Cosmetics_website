@@ -1,0 +1,82 @@
+[
+    {
+        "image":"/nour&dyaa/electric face.jpg",
+        "name":"electric face Brush",
+        "description":"لتنظيف ومساج للبشره وازالة خشونه الجلد",
+        "price":"3500 EGP"
+
+    },
+
+    {
+        "image":"/nour&dyaa/ice roller.jpg",
+        "name":"ice roller",
+        "description":"لغلق مسام الوجه والتخلص من انتفاخات اسفل العين",
+        "price":"500 EGP"
+
+    },
+
+     {
+        "image":"/nour&dyaa/led mask.jpg",
+        "name":"led mask",
+        "description":"لتحفيز مرونة الجلد وعلاج حب الشباب وانتاج الكولاجين ",
+        "price":"3000 EGP"
+
+    },
+
+     {
+        "image":"/nour&dyaa/crysral peel.jpg",
+        "name":"crysral peel",
+        "description":"جهاز تقشير كرستالي دائري يعمل على تقشير البشرة بسهولة",
+        "price":"2900 EGP"
+
+    },
+
+     {
+        "image":"/nour&dyaa/brush.jpg",
+        "name":"brush",
+        "description":"فرشة تنظيف بشرة متخصصة للاستخدام الشخصي",
+        "price":"580 EGP"
+
+    },
+
+     {
+        "image":"/nour&dyaa/derma pen.jpg",
+        "name":"derma pen",
+        "description":"تقنية الوخز بالإبر الدقيقة لتحفيز إنتاج الكولاجين والإيلاستين في البشرة",
+        "price":"2500 EGP"
+
+    },
+
+    {
+        "image":"/nour&dyaa/Derma Scoop.jpg",
+        "name":"Derma Scoop",
+        "description":"لتقييم حالة الشعر وفروة الرأس، وتحديد أسباب تساقط الشعر و الكشف عن الأمراض الجلدية مثل الأورام الجلدية، والصدفية، والأكزيما،",
+        "price":"300 EGP"
+
+    },
+
+    {
+        "image":"/nour&dyaa/Omega Light.jpg",
+        "name":"Omega Light",
+        "description":"تحمي خلايا البشرة من أضرار أشعة الشمس و تساعد على تفتيح البشرة ومقاومة التصبغات. تحافظ على البشرة رطبة.",
+        "price":"3500 EGP"
+
+    },
+
+    {
+        "image":"/nour&dyaa/Hifu Desktop face+body.jpg",
+        "name":"Hifu Desktop (face+body)",
+        "description":"لشد الجلد المترهل، وتنعيم التجاعيد، وتحديد خط الفك، ورفع الجفون والخدود، وتحسين ملمس البشرة",
+        "price":"4000 EGP"
+
+    },
+
+    {
+        "image":"/nour&dyaa/High Frequency 4 pieces.jpg",
+        "name":"High Frequency (4 pieces)",
+        "description":"لعلاج حب الشباب، تقليل التجاعيد، وتنشيط الدورة الدموية,علاج الهالات السوداء والمسام الواسعة وتحفيز نمو الشعر.",
+        "price":"1500 EGP"
+
+    }
+
+]
