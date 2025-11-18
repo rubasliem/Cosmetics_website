@@ -5,22 +5,27 @@ body, html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: #f2f4f8; /* خلفية أنعم */
+  background: #f2f4f8;
   font-family: Arial, sans-serif;
+
+  direction: ltr;      /* النص يبدأ من الشمال */
+  text-align: left;    /* محاذاة النص لليسار */
 }
 
 /* ================================
    Container
 ================================ */
 .container {
-  min-height: 80vh;
-  width: 90%;
+  min-height: 100vh;
+  width: 100%;
+  max-width: 460px;
   margin: 0 auto;
   padding: 30px 25px;
   background-color: #fff;
   border-radius: 14px;
   box-shadow: 0 4px 18px rgba(0,0,0,0.12);
   overflow-x: hidden;
+  text-align: left;      /* محاذاة النص داخل الكونتينر لليسار */
 }
 
 /* ================================
@@ -36,6 +41,7 @@ body, html {
   padding: 12px 15px;
   gap: 12px;
   margin-bottom: 25px;
+  text-align: left;
 }
 
 .header img {
@@ -60,7 +66,7 @@ body, html {
 ================================ */
 .form-group {
   display: flex;
-  align-items: left;
+  align-items: center;
   margin-bottom: 14px;
 }
 
@@ -69,16 +75,18 @@ label {
   font-size: 16px;
   font-weight: 500;
   color: #333;
+  text-align: left;      /* النص داخل الليبل يبدأ من الشمال */
 }
 
 .input {
-  width: 50%;
+  width: 65%;
   padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #bfc7d1;
   background: #fafbfc;
   font-size: 15px;
   transition: 0.2s ease;
+  text-align: left;      /* النص داخل الـ input يبدأ من الشمال */
 }
 
 .input:focus {
@@ -102,7 +110,7 @@ select.input {
 }
 
 /* ================================
-   Button
+   Button — بدون ألوان
 ================================ */
 #registerBtn {
   display: block;
@@ -111,11 +119,20 @@ select.input {
   margin: 25px auto 0;
   font-size: 17px;
   font-weight: bold;
-  color: #fff;
-  border: none;
+
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #999;
+
   border-radius: 8px;
   cursor: pointer;
-  transition: 0.2s;
+  transition: 0.2s linear;
+  text-align: center;
+}
+
+#registerBtn:hover {
+  background-color: #f3f3f3;
+  border-color: #666;
 }
 
 /* Hover Inputs */
