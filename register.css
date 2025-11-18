@@ -28,7 +28,7 @@
   display: flex;
   text-align: left;
   padding: 15px;
-  font-size: 20px;
+  font-size: 50px;
   color: rgb(70, 140, 214);
 }
 
@@ -39,7 +39,7 @@ label {
 }
 
 .input {
-  width: 200px;
+  width: 500px;
   padding: 6px;
   border-radius: 4px;
 }
@@ -49,7 +49,7 @@ label {
 }
 
 select.input {
-  width: 208px;
+  width: 500px;
  }
 
 .errorMsg {
@@ -62,7 +62,7 @@ select.input {
 #registerBtn{
   margin-left: 180px;
   margin-top: 10px;
-  width: 80px;
+  width: 100px;
 
 }
 
