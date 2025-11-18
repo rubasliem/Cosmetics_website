@@ -1,74 +1,108 @@
-    .container {
-      height: 100vh;
-      margin: 20px auto;
-      width: 100%;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      align-items: center;
-}
-
-.header{
-      display: flex;
-      background-color: rgb(196, 211, 230);
-      color: rgb(38, 60, 105);
-      font-size: 26px;
-      border-radius: 10px;
-      padding: 15px;
-      margin-bottom: 20px;
-  
-  img{width:60px;
-      height: 60px;
-      border-radius: 30px;
-      margin: 10px;
-      }
-}
-.form_login {
+/* ================================
+   Container – Full Page Layout
+================================ */
+.container {
+  min-height: 100vh;           /* ياخد ارتفاع الصفحة */
+  width: 100%;                 /* ياخد عرض الصفحة */
+  margin: 0 auto;              
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.08);
   display: flex;
-  text-align: center;
-  padding: 15px;
-  font-size: 50px;
-  color: rgb(70, 140, 214);
+  flex-direction: column;
 }
 
+/* ================================
+            Header
+================================ */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background-color: rgb(196, 211, 230);
+  color: rgb(38, 60, 105);
+  font-size: 26px;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+}
+
+.header img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+/* ================================
+            Form Title
+================================ */
+.form_login {
+  text-align: center;
+  padding: 10px;
+  font-size: 40px;
+  color: rgb(70, 140, 214);
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* ================================
+            Form Elements
+================================ */
 label {
   display: inline-block;
-  width: 50%;
-  vertical-align: top;
+  width: 40%;
+  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 .input {
-  width: 50%;
-  padding: 6px;
-  border-radius: 4px;
+  width: 60%;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: 0.2s;
+  font-size: 16px;
 }
 
 .input.error {
-  border-color: rgb(210, 183, 183);
+  border-color: rgb(210, 120, 120);
 }
 
+/* Select Size */
 select.input {
-  width: 500px;
- }
+  width: 60%;
+}
 
+/* Error Message */
 .errorMsg {
   color: darkred;
-  margin: 4px 0 0 105px;
+  margin: 4px 0 10px 41%;
   font-size: 14px;
   display: block;
 }
 
-#registerBtn{
-  margin-left: 180px;
-  margin-top: 10px;
-  width: 100px;
-
+/* Submit Button */
+#registerBtn {
+  margin: 20px auto 0; 
+  display: block;
+  width: 140px;
+  padding: 10px;
+  font-size: 18px;
+  background-color: rgb(38, 60, 105);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
-input:hover{
+#registerBtn:hover {
+  background-color: rgb(26, 41, 70);
+}
+
+/* Hover Effect */
+input:hover, select:hover {
   background-color: rgb(196, 211, 230);
   border: 1px solid rgb(38, 60, 105);
-
 }
-
