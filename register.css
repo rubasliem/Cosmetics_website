@@ -66,7 +66,6 @@ body, html {
 ================================ */
 .form-group {
   display: flex;
-  align-items: center;
   margin-bottom: 14px;
 }
 
@@ -75,7 +74,6 @@ label {
   font-size: 16px;
   font-weight: 500;
   color: #333;
-  text-align: left;      /* النص داخل الليبل يبدأ من الشمال */
 }
 
 .input {
@@ -86,7 +84,6 @@ label {
   background: #fafbfc;
   font-size: 15px;
   transition: 0.2s ease;
-  text-align: left;      /* النص داخل الـ input يبدأ من الشمال */
 }
 
 .input:focus {
@@ -120,19 +117,10 @@ select.input {
   font-size: 17px;
   font-weight: bold;
 
-  background-color: transparent;
-  color: #000;
-  border: 1px solid #999;
-
   border-radius: 8px;
   cursor: pointer;
   transition: 0.2s linear;
   text-align: center;
-}
-
-#registerBtn:hover {
-  background-color: #f3f3f3;
-  border-color: #666;
 }
 
 /* Hover Inputs */
