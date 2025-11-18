@@ -71,7 +71,7 @@ body, html {
 }
 
 label {
-  width: 35%;
+  width:40%;
   font-size: 16px;
   font-weight: 500;
   color: #333;
@@ -124,9 +124,3 @@ select.input {
   text-align: center;
 }
 
-/* Hover Inputs */
-input:hover,
-select:hover {
-  background-color: #e6eef8;
-  border-color: #2d4c80;
-}
