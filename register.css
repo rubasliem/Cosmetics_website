@@ -1,117 +1,132 @@
 /* ================================
-   Container – Full Page Without Scroll
+   General Layout
+================================ */
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: #f2f4f8; /* خلفية أنعم */
+  font-family: Arial, sans-serif;
+}
+
+/* ================================
+   Container
 ================================ */
 .container {
   min-height: 100vh;
   width: 100%;
-  max-width: 500px;   /* تصغير الحجم العام علشان يكون متناسق */
+  max-width: 460px;             /* عرض مثالي للنماذج */
   margin: 0 auto;
-  padding: 25px;
+  padding: 30px 25px;
   background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  overflow-x: hidden; /* يمنع أي scroll افقي */
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+  overflow-x: hidden;
 }
 
 /* ================================
-               Header
+   Header
 ================================ */
 .header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  background-color: rgb(196, 211, 230);
-  color: rgb(38, 60, 105);
-  font-size: 10px;
+  background-color: #d7e3f3;
+  color: #1e3a66;
+  font-size: 22px;
   border-radius: 10px;
-  padding: 10px 15px;
-  margin-bottom: 20px;
+  padding: 12px 15px;
+  gap: 12px;
+  margin-bottom: 25px;
 }
 
 .header img {
-  width: 45px;
-  height: 45px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
 }
 
 /* ================================
-         Form Title
+   Title
 ================================ */
 .form_login {
   text-align: center;
-  font-size: 30px;
-  color: rgb(70, 140, 214);
+  font-size: 28px;
+  color: #3b77c6;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
 /* ================================
-           Form Controls
+   Form Controls
 ================================ */
+.form-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
 label {
-  display: inline-block;
-  width: 35%;        /* أصغر */
+  width: 35%;
   font-size: 16px;
-  margin-bottom: 6px;
+  font-weight: 500;
+  color: #333;
 }
 
 .input {
-  width: 30%;        /* أصغر */
-  padding: 6px 8px;
+  width: 65%;
+  padding: 8px 10px;
   border-radius: 6px;
-  border: 1px solid #ccc;
+  border: 1px solid #bfc7d1;
+  background: #fafbfc;
   font-size: 15px;
-  transition: 0.2s;
+  transition: 0.2s ease;
 }
 
-/* تقليل المسافة بين كل عنصر */
-.form-group {
-  margin-bottom: 12px;
-}
-
-.input.error {
-  border-color: rgb(210, 120, 120);
+.input:focus {
+  border-color: #3b77c6;
+  outline: none;
+  box-shadow: 0 0 4px rgba(59, 119, 198, 0.4);
 }
 
 /* Select */
 select.input {
-  width: 30%;
+  width: 65%;
 }
 
 /* Error Message */
 .errorMsg {
-  color: darkred;
+  color: #a80000;
   font-size: 13px;
   margin-left: 35%;
-  margin-top: 2px;
+  margin-top: -8px;
+  margin-bottom: 8px;
 }
 
-/* Button */
+/* ================================
+   Button
+================================ */
 #registerBtn {
   display: block;
-  width: 200px;
-  padding: 8px;
-  margin: 18px auto 0;
+  width: 150px;
+  padding: 10px;
+  margin: 25px auto 0;
   font-size: 17px;
-  background-color: rgb(38, 60, 105);
+  font-weight: bold;
+  background-color: #2d4c80;
   color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
+  transition: 0.2s;
 }
 
 #registerBtn:hover {
-  background-color: rgb(25, 40, 70);
+  background-color: #1c3356;
 }
 
 /* Hover Inputs */
 input:hover,
 select:hover {
-  background-color: rgb(196, 211, 230);
-  border: 1px solid rgb(38, 60, 105);
-}
-
-/* منع أي scroll */
-body, html {
-  overflow-x: hidden;
+  background-color: #e6eef8;
+  border-color: #2d4c80;
 }
