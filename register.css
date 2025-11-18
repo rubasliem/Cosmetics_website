@@ -118,10 +118,6 @@ select.input {
   transition: 0.2s;
 }
 
-#registerBtn:hover {
-  background-color: #1c3356;
-}
-
 /* Hover Inputs */
 input:hover,
 select:hover {
