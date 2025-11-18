@@ -13,9 +13,8 @@ body, html {
    Container
 ================================ */
 .container {
-  min-height: 100vh;
-  width: 100%;
-  max-width: 460px;             /* عرض مثالي للنماذج */
+  min-height: 90vh;
+  width: 90%;
   margin: 0 auto;
   padding: 30px 25px;
   background-color: #fff;
@@ -73,7 +72,7 @@ label {
 }
 
 .input {
-  width: 65%;
+  width: 50%;
   padding: 8px 10px;
   border-radius: 6px;
   border: 1px solid #bfc7d1;
